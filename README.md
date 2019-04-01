@@ -8,8 +8,8 @@ Comments within the script provide a little more detail.  Note that this project
 
 ## Additional Requirements
 
-  - Navigate to the `ISLE_docker_compose` project directory on your host, like so: `cd /path/to/ISLE`  (the host directory where `docker-compose.yml` exists).
-  - Add this project to ISLE using: `git clone https://github.com/DigitalGrinnella/ISLE_docker_compose.git`
+  - Navigate to the host directory where ISLE is installed, the host directory where `docker-compose.yml` exists.  Probably something like: `cd /opt/ISLE`.
+  - Add this project to ISLE using: `git clone https://github.com/DigitalGrinnell/ISLE_docker_compose.git`
   - Ensure that the *bash* script is executable with: `chmod u+x ./ISLE_docker_compose/isle-docker-compose.sh`.
   - Create a symbolic link in the same folder using: `ln -s ./ISLE_docker_compose/isle-docker-compose.sh isle-docker-compose`. Adding this link will essentially define/create a new `isle-docker-compose` command for the ISLE admin to use.
 
