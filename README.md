@@ -1,8 +1,8 @@
 # ISLE_docker_compose
 
-This project provides a *bash* script that allows an ISLE admin to select and engage customization to ISLE using a relatively simple, structured approach. The script, `isle-docker-compose.sh` basically uses a "hook" approach by looking for files on an ISLE host in any directory one level below an institution's root ISLE folder, where `docker-compose.yml` exists. The script scans all such directories for files that fit the naming convention of: docker-compose.ORDER.NAME.yml. It subsequently builds and executes a command of the form:
+This project provides a *bash* script that allows an ISLE admin to select and engage customization to ISLE using a relatively simple, structured approach. The script, `isle-docker-compose.sh` basically uses a "hook" approach by looking for files on an ISLE host in an `ISLE_docker_compose` directory in an institution's root ISLE folder, where `docker-compose.yml` exists. The script scans numbered subdirectories file paths that fit the naming convention of: `./ISLE_docker_compose/ORDER_NAME/docker-compose.NAME.yml. It subsequently builds and executes a command of the form:
 
-docker-compose -f docker-compose.yml -f docker-compose.00.name00.yml -f docker-compose.01.name1.yml -f docker-compose.XX.nameXX.yml up -d
+docker-compose -f docker-compose.yml -f ./ISLE_docker_compose/00_project_name/docker-compose.name00.yml -f ./ISLE_docker_compose/01_project_name/docker-compose.name01.yml -f ./ISLE_docker_compose/XX_project_name/docker-compose.nameXX.yml up -d
 
 Comments within the script provide a little more detail.  Note that this project name contains *underscores*, because it is a *directory*, while the script name itself uses *dashes*, because it is a *single file*.
 
@@ -15,11 +15,13 @@ Comments within the script provide a little more detail.  Note that this project
 
 ## Example Use
 
-Once installed this feature would enable sysadmins to add properly structured features using a procedure like the following example. This example assumes that ISLE is installed on a host in the `/opt/ISLE` directory. It engages the GitHub project https://github.com/DigitalGrinnell/cleanup_in_ISLE_one_please.
+Once installed this feature would enable a sysadmin to add properly structured features using a procedure like the following example. This example assumes that ISLE is installed on a host in the `/opt/ISLE` directory. It engages the GitHub project https://github.com/DigitalGrinnell/05_web_auth_traefik_portainer.
 
 cd /opt/ISLE/ISLE_docker_compose
 ## Clone the feature/project to be implemented.  Repeat this for as many features/projects as you like.
-git clone https://github.com/DigitalGrinnell/cleanup_in_ISLE_one_please.git
+git clone https://github.com/DigitalGrinnell/05_web_auth_traefik_portainer.git
+## Navigate back to the ISLE root directory
+cd ..
 ## Do a `docker-compose up -d` with your new feature included
 ./isle-docker-compose
 
@@ -28,5 +30,5 @@ Updated:  01-Apr-2019
 
 | Repository URL | Purpose |  
 |----------------|---------|
-| https://github.com/DigitalGrinnell/cleanup_in_ISLE_one_please.git | Obliterates some unnecessary cruft in ISLE's FEDORA container |
-| https://github.com/DigitalGrinnell/web_auth_traefik_portainer.git | Provides an authentication challenge for ISLE's Traefik and Portainer dashboards |
+| https://github.com/DigitalGrinnell/05_web_auth_traefik_portainer.git | Provides an authentication challenge for ISLE's Traefik and Portainer dashboards |
+| https://github.com/DigitalGrinnell/10_cleanup_in_ISLE_one_please.git | Obliterates some unnecessary cruft in ISLE's FEDORA container |
