@@ -26,6 +26,7 @@ git clone https://github.com/DigitalGrinnell/cleanup_in_ISLE_one_please.git
 ## Available Projects / Features
 Updated:  01-Apr-2019
 
-| Repository URL | Purpose |
+| Repository URL | Purpose |  
+|----------------|---------|
 | https://github.com/DigitalGrinnell/cleanup_in_ISLE_one_please.git | Obliterates some unnecessary cruft in ISLE's FEDORA container |
 | https://github.com/DigitalGrinnell/web_auth_traefik_portainer.git | Provides an authentication challenge for ISLE's Traefik and Portainer dashboards |
