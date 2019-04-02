@@ -23,6 +23,9 @@
 ##   .yml files.  `PROJECT` and `NAME` can be any descriptive text you like;
 ##   but NO spaces please.
 
+## Pull in the .env file variable definitions.
+source ./.env
+
 ## Begin with the base `docker-compose` command
 command='docker-compose -f docker-compose.yml'
 
@@ -46,5 +49,11 @@ fi
 
 ## Append the `-d` option to $command and execute it.
 command+=' up -d'
-printf "\nFinal command is '$command'.  Executing it now...\n"
+printf "\nFinal command is '$command'.  Executing it now...\n\n"
 eval $command
+printf "\nisle-docker-compose is done, but containers may take a minute to completely spin up.\n"
+
+## Instruct the user how to proceed...
+printf "\nIf this is the first time you've created this ISLE instance, you may want to run\n"
+printf "  time docker exec -it isle-apache-${CONTAINER_SHORT_ID} bash ./utility-scripts/isle_drupal_build_tools/isle-islandora-installer.sh\n"
+printf "to complete the installation of Drupal/Islandora components.\n\n"
