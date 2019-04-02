@@ -19,6 +19,7 @@ Comments within the script provide a little more detail.  Note that this project
 
 Once installed this feature would enable a sysadmin to add properly structured features using a procedure like the following example. This example assumes that ISLE is installed on a host in the `/opt/ISLE` directory. It engages the GitHub project https://github.com/DigitalGrinnell/05_web_auth_traefik_portainer.
 
+```
 cd /opt/ISLE/ISLE_docker_compose
 ## Clone the feature/project to be implemented.  Repeat this for as many features/projects as you like.
 git clone https://github.com/DigitalGrinnell/05_web_auth_traefik_portainer.git
@@ -26,6 +27,7 @@ git clone https://github.com/DigitalGrinnell/05_web_auth_traefik_portainer.git
 cd ..
 ## Do a `docker-compose up -d` with your new feature included
 ./isle-docker-compose
+```
 
 ## Available Projects / Features
 Updated:  01-Apr-2019
