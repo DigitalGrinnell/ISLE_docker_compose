@@ -1,0 +1,6 @@
+[submodule "05_web_auth_traefik_portainer"]
+	path = 05_web_auth_traefik_portainer
+	url = https://github.com/DigitalGrinnell/05_web_auth_traefik_portainer.git
+[submodule "10_cleanup_in_ISLE_one_please"]
+	path = 10_cleanup_in_ISLE_one_please
+	url = https://github.com/DigitalGrinnell/10_cleanup_in_ISLE_one_please.git
